@@ -40,6 +40,12 @@ public class LogginLabTest {
         lab.setThreshold(finalLimit);
 
         for(Integer i = 1; i<=finalLimit; i++){
+            /*
+            The reason why we're asserting True is because of the if condition!!!!!
+            lab.thresholdReached(1~3) will return FALSE, so it will go to the else statement!!!!!
+            It will only return true when i = 4, which means it goes into the if statement,
+            therefore we assertTrue here!!!!
+             */
             if(lab.thresholdReached(i)){
                 logger.log(Level.INFO, "Threshold not reached. Level is " + i);
                 assertTrue(lab.thresholdReached(i));
